@@ -1,11 +1,8 @@
 import Foundation
 
 extension URLResponse {
-  private var statusCode: Int? {
-    (self as? HTTPURLResponse)?.statusCode
-  }
-
   public var httpStatusCode: HTTPStatusCode? {
-    statusCode.flatMap { .init(code: $0) }
+    let httpResponse = self as? HTTPURLResponse
+    return httpResponse.flatMap { .init(code: $0.statusCode) }
   }
 }
