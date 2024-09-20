@@ -1,7 +1,7 @@
 import Foundation
 
 extension Encodable {
-  func encode(
+  public func encode(
     keyEncodingStrategy: JSONEncoder.KeyEncodingStrategy?,
     dateEncodingStrategy: JSONEncoder.DateEncodingStrategy?
   ) throws -> Data {

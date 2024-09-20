@@ -1,6 +1,6 @@
 import Foundation
 
-enum HTTPStatusCode: Equatable {
+public enum HTTPStatusCode: Equatable {
   case informational(Int)
   case success(Int)
   case redirection(Int)
@@ -8,7 +8,7 @@ enum HTTPStatusCode: Equatable {
   case serverError(Int)
   case unknown(Int)
 
-  init(code: Int) {
+  public init(code: Int) {
     self = switch code {
     case 100...199: .informational(code)
     case 200...299: .success(code)
@@ -19,7 +19,7 @@ enum HTTPStatusCode: Equatable {
     }
   }
 
-  var isError: Bool {
+  public var isError: Bool {
     switch self {
     case .clientError, .serverError: true
     default: false

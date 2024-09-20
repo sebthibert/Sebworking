@@ -5,7 +5,7 @@ extension URLResponse {
     (self as? HTTPURLResponse)?.statusCode
   }
 
-  var httpStatusCode: HTTPStatusCode? {
+  public var httpStatusCode: HTTPStatusCode? {
     statusCode.flatMap { .init(code: $0) }
   }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-protocol Request {
+public protocol Request {
   var scheme: String { get }
   var host: String { get }
   var path: String { get }
@@ -13,7 +13,7 @@ protocol Request {
   var dateDecodingStrategy: JSONDecoder.DateDecodingStrategy? { get }
 }
 
-extension Request {
+public extension Request {
   var scheme: String { "https" }
   var queryItems: [URLQueryItem]? { nil }
   var httpMethod: RequestMethod { .get }

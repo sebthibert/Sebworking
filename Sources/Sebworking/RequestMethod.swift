@@ -1,17 +1,17 @@
 import Foundation
 
-enum RequestMethod: CustomStringConvertible {
+public enum RequestMethod: CustomStringConvertible {
   case get
   case post(Encodable)
 
-  var description: String {
+  public var description: String {
     switch self {
     case .get: "GET"
     case .post: "POST"
     }
   }
 
-  func body(
+  public func body(
     keyEncodingStrategy: JSONEncoder.KeyEncodingStrategy?,
     dateEncodingStrategy: JSONEncoder.DateEncodingStrategy?
   ) throws -> Data? {

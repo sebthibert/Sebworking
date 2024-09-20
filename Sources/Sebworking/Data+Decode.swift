@@ -1,7 +1,7 @@
 import Foundation
 
 extension Data {
-  func decode<D: Decodable>(
+  public func decode<D: Decodable>(
     keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy?,
     dateDecodingStrategy: JSONDecoder.DateDecodingStrategy?
   ) throws -> D {
